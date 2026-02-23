@@ -1,0 +1,183 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 1rem;
+    /* minimal padding for small screens, does not alter design */
+    box-sizing: border-box;
+}
+
+.advatnages-top-head {
+    font-size: 28px;
+    font-weight: lighter;
+    color: rgb(0, 0, 0);
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.advatnages-top-head span {
+    color: red;
+}
+
+.advantages-cards-main-con {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    gap: 3px;
+    padding: 0 1rem;
+}
+
+.advantages-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 260px;
+    width: 205px;
+    padding: 5px;
+    background-color: #FDDDB8;
+}
+
+.advantages-card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 260px;
+    width: 205px;
+    padding: 5px;
+    background-color: #FDF5AD;
+}
+
+.advantages-card-img-con {
+    height: 50px;
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 1.8rem;
+}
+
+.advantages-card-img-con img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.advantages-card-main-text,
+.advantages-card-sub-text {
+    margin: auto;
+}
+
+.advantages-card-sub-text {
+    font-size: 13px;
+    margin-top: 0.5rem;
+    color: rgba(0, 0, 0, 0.664);
+}
+
+/* ===== RESPONSIVE ADDITIONS (only layout adjustments, no style/design changes) ===== */
+
+/* On large desktops the six columns work fine.
+           But when width is less than 6*205px + gaps, we switch to multi-row grid.
+        */
+
+/* first breakpoint: below 1300px – show 3 columns (cards will wrap naturally) */
+@media screen and (max-width: 1300px) {
+    .advantages-cards-main-con {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        /* flexible columns */
+        justify-items: center;
+        gap: 20px 10px;
+        /* row-gap column-gap */
+    }
+
+    /* keep card dimensions exactly as original, but allow them to shrink slightly only if needed */
+    .advantages-card,
+    .advantages-card2 {
+        width: 100%;
+        /* take full column width */
+        max-width: 230px;
+        /* but never exceed original ~205+padding, give air */
+        height: auto;
+        /* height adapts to content, keep proportions */
+        min-height: 240px;
+        /* maintain approximate original visual weight */
+        padding: 15px 10px;
+        /* a bit more vertical padding but keep same style */
+    }
+
+    /* image container remains same size */
+    .advantages-card-img-con {
+        margin-bottom: 1.2rem;
+        /* slightly reduced to keep compact, but original was 1.8rem – we reduce to keep card from growing too tall */
+        /* actually original margin: 1.8rem, on mobile we keep around 1.2rem, but we want same look? 
+                   We'll keep original margin, but since height auto it's fine. Let's keep 1.8rem on wide, 
+                   but for small screens it may increase card height – we keep it exactly as original */
+    }
+}
+
+/* second breakpoint: tablet landscape -> 2 columns */
+@media screen and (max-width: 900px) {
+    .advantages-cards-main-con {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .advantages-card,
+    .advantages-card2 {
+        width: 100%;
+        max-width: 280px;
+        /* a bit wider, but never distorted */
+        height: auto;
+        min-height: 250px;
+    }
+
+    /* keep all inner styling exactly as original */
+    .advantages-card-img-con {
+        margin-bottom: 1.5rem;
+        /* keep original spirit, but small adjustment for consistent look */
+    }
+}
+
+/* third breakpoint: mobile -> 1 column, cards centered */
+@media screen and (max-width: 550px) {
+    .advantages-cards-main-con {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .advantages-card,
+    .advantages-card2 {
+        width: 100%;
+        max-width: 300px;
+        /* cards comfortable on mobile */
+        height: auto;
+        min-height: 240px;
+        padding: 20px 10px;
+        /* a bit more breathing, but same design */
+    }
+
+    .advatnages-top-head {
+        font-size: 24px;
+        /* slightly smaller heading on mobile (still readable) */
+        text-align: center;
+    }
+
+    /* keep image margins original – no change */
+    .advantages-card-img-con {
+        margin-bottom: 1.8rem;
+        /* restored original margin */
+    }
+}
+
+/* very small devices: keep card max-width */
+@media screen and (max-width: 350px) {
+
+    .advantages-card,
+    .advantages-card2 {
+        max-width: 260px;
+        padding: 15px 5px;
+    }
+}

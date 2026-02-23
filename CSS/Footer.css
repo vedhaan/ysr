@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+}
+
+.footer-main-con {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 2rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.219);
+    border-top-right-radius: 55px;
+    border-top-left-radius: 55px;
+    background-color: #fff5f5e1;
+}
+
+.footer-about-compony-content {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.7);
+    padding-top: 5.1rem;
+}
+
+.footer-about-compony-icons {
+    display: flex;
+    justify-content: start;
+    margin-top: 1rem;
+    font-size: 23px;
+    gap: 8px;
+}
+
+.footer-about-compony-icons a i {
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-about-compony-icons a i:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transform: rotate(15deg);
+}
+
+
+.footer-compony-list-con ul li,
+.footer-help-list-con ul li,
+.footer-faq-list-con ul li {
+    line-height: 3.2rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-compony-list-con ul li a,
+.footer-help-list-con ul li a,
+.footer-faq-list-con ul li a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-compony-list-con ul li a:hover,
+.footer-help-list-con ul li a:hover,
+.footer-faq-list-con ul li a:hover {
+    color: black;
+}
+
+.footer-compony-list-con ul li a::after,
+.footer-help-list-con ul li a::after,
+.footer-faq-list-con ul li a::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background: rgba(0, 255, 191, 0.863);
+    bottom: -2px;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-compony-list-con ul li a:hover::after,
+.footer-help-list-con ul li a:hover::after,
+.footer-faq-list-con ul li a:hover::after {
+    width: 80%;
+}
+
+/* For mobile devices (below 768px) */
+@media (max-width: 767px) {
+    .footer-main-con {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 1.5rem;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+    }
+    
+    .footer-about-compony-content {
+        padding-top: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .footer-about-compony-icons {
+        font-size: 20px;
+        margin-top: 0.75rem;
+        justify-content: center;
+    }
+    
+    .footer-about-compony-icons a i {
+        padding: 0.4rem;
+        height: 18px;
+        width: 18px;
+    }
+    
+    .footer-compony-list-con,
+    .footer-help-list-con,
+    .footer-faq-list-con {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-compony-list-con ul li,
+    .footer-help-list-con ul li,
+    .footer-faq-list-con ul li {
+        line-height: 2.8rem;
+    }
+    
+    .footer-compony-list-con ul,
+    .footer-help-list-con ul,
+    .footer-faq-list-con ul {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* For iPad Mini and iPad Air (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-main-con {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 15px;
+        padding: 1.75rem;
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
+    }
+    
+    .footer-about-compony-content {
+        padding-top: 2rem;
+        font-size: 14px;
+    }
+    
+    .footer-about-compony-icons {
+        font-size: 20px;
+        margin-top: 0.875rem;
+        gap: 6px;
+    }
+    
+    .footer-about-compony-icons a i {
+        padding: 0.4rem;
+        height: 18px;
+        width: 18px;
+    }
+    
+    .footer-compony-list-con ul li,
+    .footer-help-list-con ul li,
+    .footer-faq-list-con ul li {
+        line-height: 3rem;
+    }
+}
+
+/* For iPad Pro (1025px to 1368px) */
+@media (min-width: 1025px) and (max-width: 1368px) {
+    .footer-main-con {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 18px;
+        padding: 2rem;
+        border-top-right-radius: 45px;
+        border-top-left-radius: 45px;
+    }
+    
+    .footer-about-compony-content {
+        padding-top: 3rem;
+        font-size: 14.5px;
+    }
+    
+    .footer-about-compony-icons {
+        font-size: 21px;
+        margin-top: 1rem;
+        gap: 7px;
+    }
+    
+    .footer-about-compony-icons a i {
+        padding: 0.45rem;
+        height: 19px;
+        width: 19px;
+    }
+    
+    .footer-compony-list-con ul li,
+    .footer-help-list-con ul li,
+    .footer-faq-list-con ul li {
+        line-height: 3.1rem;
+    }
+}
+
+/* For larger desktops (1369px to 1439px) */
+@media (min-width: 1369px) and (max-width: 1439px) {
+    .footer-main-con {
+        padding: 2rem;
+        gap: 20px;
+    }
+    
+    .footer-about-compony-content {
+        padding-top: 5.1rem;
+        font-size: 15px;
+    }
+    
+    .footer-about-compony-icons {
+        font-size: 23px;
+        margin-top: 1rem;
+    }
+}
+
+/* For very large screens (1440px and above) */
+@media (min-width: 1440px) {
+    .footer-main-con {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+}

@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600&family=Anton&family=Raleway:wght@400;700&family=Nunito:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.categories-main-con {
+    margin: 2rem;
+    animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categories-content-button-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.5s ease-out 0.4s both;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categories-content-section h2 {
+    margin: auto;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.categories-button-section {
+    display: flex;
+    gap: 1rem;
+}
+
+.categories-button {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 13px;
+    padding: 0.4rem 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.categories-button:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.catalogue-btn {
+    background-color: #255e5f;
+    border: 1px solid #7FABAC;
+    border-radius: 13px;
+    padding: 0.7rem 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.catalogue-btn:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.categories-images-con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 2rem 0;
+    animation: fadeIn 0.6s ease-out 0.7s both;
+}
+
+.category-image-con {
+    width: 400px;
+    height: 200px;
+    display: none;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    overflow: hidden;
+    border-radius: 35px;
+    position: relative;
+}
+
+.category-image-con.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: cardReveal 0.6s ease-out backwards;
+}
+
+.category-image-con:nth-child(1).show { animation-delay: 0.8s; }
+.category-image-con:nth-child(2).show { animation-delay: 0.85s; }
+.category-image-con:nth-child(3).show { animation-delay: 0.9s; }
+.category-image-con:nth-child(4).show { animation-delay: 0.95s; }
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.category-image-con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Wave flash effect on hover */
+.category-image-con::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-image-con:hover::before {
+    animation: waveFlash 0.8s ease-out;
+}
+
+@keyframes waveFlash {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.category-image-con:hover img {
+    transform: scale(1.1);
+}
+
+/* For mobile devices (below 768px) */
+@media (max-width: 767px) {
+    .categories-main-con {
+        margin: 1rem;
+        animation: slideUp 0.5s ease-out 0.2s both;
+    }
+    
+    .categories-content-button-con {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        animation: slideDown 0.4s ease-out 0.3s both;
+    }
+    
+    .categories-content-section h2 {
+        font-size: 24px;
+    }
+    
+    .categories-button-section {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+    
+    .categories-button-section::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .categories-button-section::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .categories-button-section::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .categories-button-section::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .categories-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    
+    .catalogue-btn {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        animation: fadeIn 0.5s ease-out 0.6s both;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 180px;
+        border-radius: 25px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+        animation: cardReveal 0.5s ease-out backwards;
+    }
+    
+    .category-image-con:nth-child(1).show { animation-delay: 0.7s; }
+    .category-image-con:nth-child(2).show { animation-delay: 0.75s; }
+    .category-image-con:nth-child(3).show { animation-delay: 0.8s; }
+    .category-image-con:nth-child(4).show { animation-delay: 0.85s; }
+    
+    .category-image-con img {
+        border-radius: 25px;
+    }
+    
+    .category-image-con::before {
+        border-radius: 25px;
+    }
+}
+
+/* For small mobile screens (below 480px) */
+@media (max-width: 480px) {
+    .categories-main-con {
+        margin: 0.75rem;
+        animation: slideUp 0.4s ease-out 0.2s both;
+    }
+    
+    .categories-content-section h2 {
+        font-size: 20px;
+    }
+    
+    .categories-button-section {
+        gap: 0.4rem;
+    }
+    
+    .categories-button {
+        font-size: 12px;
+        padding: 0.3rem 0.6rem;
+        border-radius: 10px;
+    }
+    
+    .catalogue-btn {
+        font-size: 12px;
+        padding: 0.4rem 0.8rem;
+        border-radius: 10px;
+    }
+    
+    .categories-images-con {
+        gap: 0.75rem;
+        margin: 1rem 0;
+        animation: fadeIn 0.4s ease-out 0.55s both;
+    }
+    
+    .category-image-con {
+        height: 150px;
+        border-radius: 20px;
+    }
+    
+    .category-image-con.show {
+        animation: cardReveal 0.4s ease-out backwards;
+    }
+    
+    .category-image-con:nth-child(1).show { animation-delay: 0.6s; }
+    .category-image-con:nth-child(2).show { animation-delay: 0.65s; }
+    .category-image-con:nth-child(3).show { animation-delay: 0.7s; }
+    .category-image-con:nth-child(4).show { animation-delay: 0.75s; }
+    
+    .category-image-con img {
+        border-radius: 20px;
+    }
+    
+    .category-image-con::before {
+        border-radius: 20px;
+    }
+}
+
+/* For tablets and iPad devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .categories-main-con {
+        margin: 1.5rem;
+        animation: slideUp 0.5s ease-out 0.3s both;
+    }
+    
+    .categories-content-button-con {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        animation: slideDown 0.4s ease-out 0.4s both;
+    }
+    
+    .categories-content-section h2 {
+        font-size: 28px;
+    }
+    
+    .categories-button-section {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.75rem;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+    
+    .categories-button {
+        padding: 0.45rem 1rem;
+        font-size: 15px;
+        flex-shrink: 0;
+    }
+    
+    .catalogue-btn {
+        padding: 0.65rem 1.3rem;
+        font-size: 15px;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 1.75rem 0;
+        animation: fadeIn 0.5s ease-out 0.65s both;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 200px;
+        border-radius: 30px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+        animation: cardReveal 0.5s ease-out backwards;
+    }
+    
+    .category-image-con:nth-child(1).show { animation-delay: 0.8s; }
+    .category-image-con:nth-child(2).show { animation-delay: 0.85s; }
+    .category-image-con:nth-child(3).show { animation-delay: 0.9s; }
+    .category-image-con:nth-child(4).show { animation-delay: 0.95s; }
+    
+    .category-image-con img {
+        border-radius: 30px;
+    }
+    
+    .category-image-con::before {
+        border-radius: 30px;
+    }
+}
+
+/* For larger tablets and small laptops (1025px to 1180px) */
+@media (min-width: 1025px) and (max-width: 1180px) {
+    .categories-main-con {
+        margin: 1.75rem;
+    }
+    
+    .categories-content-section h2 {
+        font-size: 28px;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        margin: 1.75rem 0;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 200px;
+        border-radius: 30px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+    }
+    
+    .category-image-con img {
+        border-radius: 30px;
+    }
+    
+    .category-image-con::before {
+        border-radius: 30px;
+    }
+}
+
+/* For desktops (1181px to 1439px) */
+@media (min-width: 1181px) and (max-width: 1439px) {
+    .categories-main-con {
+        margin: 2rem;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 2rem 0;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 200px;
+        border-radius: 35px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+    }
+    
+    .category-image-con::before {
+        border-radius: 35px;
+    }
+}
+
+/* For very large screens (1440px and above) */
+@media (min-width: 1440px) {
+    .categories-main-con {
+        max-width: 1400px;
+        margin: 2rem auto;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 2rem 0;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 200px;
+        border-radius: 35px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+    }
+    
+    .category-image-con::before {
+        border-radius: 35px;
+    }
+}
+
+/* For iPad Pro (1366px to 1368px) */
+@media (min-width: 1366px) and (max-width: 1368px) {
+    .categories-main-con {
+        margin: 1.75rem;
+    }
+    
+    .categories-content-button-con {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .categories-button-section {
+        overflow-x: visible;
+        justify-content: flex-end;
+    }
+    
+    .categories-images-con {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        margin: 1.75rem 0;
+    }
+    
+    .category-image-con {
+        width: 100%;
+        height: 220px;
+        border-radius: 30px;
+    }
+    
+    .category-image-con.show {
+        display: block;
+    }
+    
+    .category-image-con img {
+        border-radius: 30px;
+    }
+    
+    .category-image-con::before {
+        border-radius: 30px;
+    }
+}

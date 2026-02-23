@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600&family=Anton&family=Raleway:wght@400;700&family=Nunito:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.category-main-con {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.category-card {
+    position: relative;
+    height: 200px;
+    width: 240px;
+    border-radius: 20px;
+}
+
+.category-card-img-con {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.category-card-img-con img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.category-card-text-con {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.4rem 0.8rem;
+}
+
+.category-card-main-head,
+.category-card-sub-head {
+    margin: auto;
+}
+
+.category-card-main-head {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.category-card-sub-head {
+    font-size: 15px;
+    color: rgba(48, 48, 48, 0.918);
+}
+
+.category-card-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.842);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.category-card-btn:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.733);
+    outline: 2px solid rgba(0, 0, 0, 0.384);
+    /* bottom: 2%; */
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 400px) {
+    .category-main-con {
+        overflow-x: scroll;
+        height: 250px;
+        justify-content: start;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 575px) {
+   .category-main-con {
+        overflow-x: scroll;
+        height: 250px;
+        justify-content: start;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+   .category-main-con {
+        overflow-x: scroll;
+        height: 250px;
+        justify-content: start;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+   .category-main-con {
+        overflow-x: scroll;
+        height: 250px;
+        justify-content: start;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+}

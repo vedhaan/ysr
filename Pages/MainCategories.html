@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Categories</title>
+
+    <link rel="stylesheet" href="../CSS/MainCategories.css">
+</head>
+
+<body>
+    <div class="categories-main-con">
+        <div class="categories-content-button-con">
+            <div class="categories-content-section">
+                <h2>CATEGORIES</h2>
+            </div>
+
+            <div class="categories-button-section">
+                <button class="categories-button">Paints</button>
+                <button class="categories-button">Plumbing</button>
+                <button class="categories-button">Cement</button>
+                <button class="categories-button">Bath</button>
+            </div>
+        </div>
+
+        <div class="categories-images-con">
+
+            <div class="category-image-con paints show">
+                <img src="./Images/berger paint 1.jpeg">
+            </div>
+            <div class="category-image-con paints show">
+                <img src="./Images/berger paint 2.jpeg">
+            </div>
+            <div class="category-image-con paints show">
+                <img src="./Images/berger paint 3.jpeg">
+            </div>
+            <div class="category-image-con paints show">
+                <img src="./Images/berger paint 4.jpeg">
+            </div>
+
+            <!-- Plumbing -->
+            <div class="category-image-con plumbing">
+                <img src="./Images/berger paint 1.jpeg">
+            </div>
+            <div class="category-image-con plumbing">
+                <img src="./Images/berger paint 1.jpeg">
+            </div>
+             <div class="category-image-con plumbing">
+                <img src="./Images/berger paint 1.jpeg">
+            </div>
+             <div class="category-image-con plumbing">
+                <img src="./Images/berger paint 1.jpeg">
+            </div>
+
+            <!-- Cement -->
+            <div class="category-image-con cement">
+                <img src="./Images/cement1.jpg">
+            </div>
+
+            <!-- Bath -->
+            <div class="category-image-con bath">
+                <img src="./Images/bath1.jpg">
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".categories-button").forEach(button => {
+            button.addEventListener("click", function () {
+
+                const category = this.textContent.trim().toLowerCase();
+
+                document.querySelectorAll(".category-image-con").forEach(img => {
+                    img.classList.remove("show");
+                });
+
+                setTimeout(() => {
+                    document.querySelectorAll("." + category).forEach(img => {
+                        img.classList.add("show");
+                    });
+                }, 50);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

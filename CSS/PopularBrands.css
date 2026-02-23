@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600&family=Anton&family=Raleway:wght@400;700&family=Nunito:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: pageLoad 0.8s ease-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popular-brand-main-con {
+    margin: 2rem;
+    animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popular-brand-heading {
+    margin: auto;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 0 2rem 0;
+    text-align: start;
+    animation: slideLeft 0.7s ease-out 0.4s both;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.popular-brand-first-image-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+.popular-brand-img-con,
+.popular-brand-mid-img-con {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 35px;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.popular-brand-img-con:nth-child(1) {
+    animation-delay: 0.5s, 0s;
+}
+
+.popular-brand-mid-img-con {
+    animation: floatMid 3s ease-in-out infinite alternate;
+    animation-delay: 0.6s, 0s;
+}
+
+.popular-brand-img-con:nth-child(3) {
+    animation-delay: 0.7s, 0s;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+@keyframes floatMid {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(-15px) rotate(-1deg);
+    }
+}
+
+.popular-brand-img-con img,
+.popular-brand-mid-img-con img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.popular-brand-img-con:hover img,
+.popular-brand-mid-img-con:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.brand-name {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 16px;
+    border-radius: 10px;
+    animation: slideUpSmall 0.5s ease-out 0.8s both;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideUpSmall {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popular-brand-img-con:hover .brand-name,
+.popular-brand-mid-img-con:hover .brand-name {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+}
+
+.popular-brand-second-image-section {
+    margin: 4rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.popular-brand-second-img-con {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 35px;
+    animation: bounceIn 0.6s ease-out backwards;
+}
+
+.popular-brand-second-img-con:nth-child(1) { animation-delay: 0.9s; }
+.popular-brand-second-img-con:nth-child(2) { animation-delay: 1s; }
+.popular-brand-second-img-con:nth-child(3) { animation-delay: 1.1s; }
+.popular-brand-second-img-con:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.popular-brand-second-img-con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.popular-brand-second-img-con:hover img {
+    transform: scale(1.15) rotate(-1deg);
+}
+
+.popular-brand-second-img-con::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popular-brand-second-img-con:hover::before {
+    opacity: 1;
+    animation: shine 0.8s ease-out;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* For mobile (below 768px) */
+@media (max-width: 767px) {
+    .popular-brand-main-con {
+        margin: 1rem;
+        animation: slideUp 0.5s ease-out 0.2s both;
+    }
+    
+    .popular-brand-heading {
+        font-size: 24px;
+        margin: 0 0 1.5rem 0;
+        animation: slideLeft 0.5s ease-out 0.3s both;
+    }
+    
+    .popular-brand-first-image-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .popular-brand-img-con,
+    .popular-brand-mid-img-con {
+        height: 180px;
+        width: 100%;
+        border-radius: 25px;
+        animation: floatMobile 3s ease-in-out infinite alternate;
+    }
+    
+    .popular-brand-img-con:nth-child(1) {
+        animation-delay: 0.4s, 0s;
+    }
+    
+    .popular-brand-mid-img-con {
+        animation: floatMidMobile 3s ease-in-out infinite alternate;
+        animation-delay: 0.5s, 0s;
+    }
+    
+    .popular-brand-img-con:nth-child(3) {
+        animation-delay: 0.6s, 0s;
+    }
+    
+    @keyframes floatMobile {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-5px);
+        }
+    }
+    
+    @keyframes floatMidMobile {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-8px);
+        }
+    }
+    
+    .popular-brand-img-con img,
+    .popular-brand-mid-img-con img {
+        border-radius: 25px;
+    }
+    
+    .brand-name {
+        font-size: 16px;
+        bottom: 15px;
+        left: 15px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        animation: slideUpSmall 0.4s ease-out 0.6s both;
+    }
+    
+    .popular-brand-second-image-section {
+        margin: 2rem 0 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .popular-brand-second-img-con {
+        height: 180px;
+        border-radius: 25px;
+        animation: bounceInMobile 0.5s ease-out backwards;
+    }
+    
+    .popular-brand-second-img-con:nth-child(1) { animation-delay: 0.7s; }
+    .popular-brand-second-img-con:nth-child(2) { animation-delay: 0.8s; }
+    .popular-brand-second-img-con:nth-child(3) { animation-delay: 0.9s; }
+    .popular-brand-second-img-con:nth-child(4) { animation-delay: 1s; }
+    
+    @keyframes bounceInMobile {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .popular-brand-second-img-con img {
+        border-radius: 25px;
+    }
+}
+
+/* For small mobile screens (below 480px) */
+@media (max-width: 480px) {
+    .popular-brand-main-con {
+        margin: 0.75rem;
+        animation: slideUp 0.4s ease-out 0.2s both;
+    }
+    
+    .popular-brand-heading {
+        font-size: 20px;
+        margin: 0 0 1rem 0;
+        animation: slideLeft 0.4s ease-out 0.3s both;
+    }
+    
+    .popular-brand-first-image-section {
+        gap: 0.75rem;
+    }
+    
+    .popular-brand-img-con,
+    .popular-brand-mid-img-con {
+        height: 150px;
+        border-radius: 20px;
+        animation: floatSmallMobile 3s ease-in-out infinite alternate;
+    }
+    
+    .popular-brand-img-con:nth-child(1) {
+        animation-delay: 0.35s, 0s;
+    }
+    
+    .popular-brand-mid-img-con {
+        animation: floatMidSmallMobile 3s ease-in-out infinite alternate;
+        animation-delay: 0.4s, 0s;
+    }
+    
+    .popular-brand-img-con:nth-child(3) {
+        animation-delay: 0.45s, 0s;
+    }
+    
+    @keyframes floatSmallMobile {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-3px);
+        }
+    }
+    
+    @keyframes floatMidSmallMobile {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-5px);
+        }
+    }
+    
+    .popular-brand-img-con img,
+    .popular-brand-mid-img-con img {
+        border-radius: 20px;
+    }
+    
+    .brand-name {
+        font-size: 14px;
+        bottom: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        animation: slideUpSmall 0.3s ease-out 0.5s both;
+    }
+    
+    .popular-brand-second-image-section {
+        margin: 1.5rem 0 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .popular-brand-second-img-con {
+        height: 150px;
+        border-radius: 20px;
+        animation: bounceInSmallMobile 0.4s ease-out backwards;
+    }
+    
+    .popular-brand-second-img-con:nth-child(1) { animation-delay: 0.6s; }
+    .popular-brand-second-img-con:nth-child(2) { animation-delay: 0.65s; }
+    .popular-brand-second-img-con:nth-child(3) { animation-delay: 0.7s; }
+    .popular-brand-second-img-con:nth-child(4) { animation-delay: 0.75s; }
+    
+    @keyframes bounceInSmallMobile {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .popular-brand-second-img-con img {
+        border-radius: 20px;
+    }
+}
+
+/* For tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .popular-brand-main-con {
+        margin: 1.5rem;
+        animation: slideUp 0.5s ease-out 0.3s both;
+    }
+    
+    .popular-brand-heading {
+        font-size: 28px;
+        margin: 0 0 1.75rem 0;
+        animation: slideLeft 0.6s ease-out 0.4s both;
+    }
+    
+    .popular-brand-first-image-section {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 1.5rem;
+    }
+    
+    .popular-brand-img-con,
+    .popular-brand-mid-img-con {
+        height: 220px;
+        border-radius: 30px;
+        animation: floatTablet 3s ease-in-out infinite alternate;
+    }
+    
+    .popular-brand-img-con:nth-child(1) {
+        animation-delay: 0.45s, 0s;
+    }
+    
+    .popular-brand-mid-img-con {
+        animation: floatMidTablet 3s ease-in-out infinite alternate;
+        animation-delay: 0.55s, 0s;
+    }
+    
+    .popular-brand-img-con:nth-child(3) {
+        animation-delay: 0.65s, 0s;
+    }
+    
+    @keyframes floatTablet {
+        from {
+            transform: translateY(0) rotate(0deg);
+        }
+        to {
+            transform: translateY(-8px) rotate(0.5deg);
+        }
+    }
+    
+    @keyframes floatMidTablet {
+        from {
+            transform: translateY(0) rotate(0deg);
+        }
+        to {
+            transform: translateY(-12px) rotate(-0.5deg);
+        }
+    }
+    
+    .popular-brand-img-con img,
+    .popular-brand-mid-img-con img {
+        border-radius: 30px;
+    }
+    
+    .brand-name {
+        font-size: 18px;
+        bottom: 18px;
+        left: 18px;
+        padding: 7px 14px;
+        animation: slideUpSmall 0.4s ease-out 0.7s both;
+    }
+    
+    .popular-brand-second-image-section {
+        margin: 3rem 0 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .popular-brand-second-img-con {
+        height: 220px;
+        border-radius: 30px;
+        animation: bounceInTablet 0.5s ease-out backwards;
+    }
+    
+    .popular-brand-second-img-con:nth-child(1) { animation-delay: 0.8s; }
+    .popular-brand-second-img-con:nth-child(2) { animation-delay: 0.9s; }
+    .popular-brand-second-img-con:nth-child(3) { animation-delay: 1s; }
+    .popular-brand-second-img-con:nth-child(4) { animation-delay: 1.1s; }
+    
+    @keyframes bounceInTablet {
+        0% {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+        60% {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .popular-brand-second-img-con img {
+        border-radius: 30px;
+    }
+}
+
+/* For iPad Mini and iPad Air landscape (1024px to 1180px) */
+@media (min-width: 1024px) and (max-width: 1180px) {
+    .popular-brand-main-con {
+        margin: 1.75rem;
+    }
+    
+    .popular-brand-heading {
+        font-size: 28px;
+        margin: 0 0 1.75rem 0;
+    }
+    
+    .popular-brand-first-image-section {
+        gap: 1.75rem;
+    }
+    
+    .popular-brand-img-con,
+    .popular-brand-mid-img-con {
+        height: 240px;
+    }
+    
+    .brand-name {
+        font-size: 18px;
+        bottom: 18px;
+        left: 18px;
+    }
+    
+    .popular-brand-second-image-section {
+        margin: 3.5rem 0 0 0;
+        gap: 1.75rem;
+    }
+    
+    .popular-brand-second-img-con {
+        height: 240px;
+    }
+}
+
+/* For larger desktops (1181px to 1439px) */
+@media (min-width: 1181px) and (max-width: 1439px) {
+    .popular-brand-main-con {
+        margin: 2rem;
+    }
+    
+    .popular-brand-first-image-section {
+        gap: 20px;
+    }
+    
+    .popular-brand-img-con,
+    .popular-brand-mid-img-con {
+        height: 250px;
+    }
+    
+    .popular-brand-second-image-section {
+        margin: 4rem 0 0 0;
+        gap: 20px;
+    }
+    
+    .popular-brand-second-img-con {
+        height: 250px;
+    }
+}
+
+/* For very large screens (1440px and above) */
+@media (min-width: 1440px) {
+    .popular-brand-main-con {
+        max-width: 1400px;
+        margin: 2rem auto;
+    }
+}

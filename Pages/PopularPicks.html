@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Picks</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../CSS/PopularPicks.css">       
+</head>
+
+<body>
+
+    <div class="popular-picks-main-con">
+        <h2 class="popular-picks-main-heading">POPULAR PICKS</h2>
+
+        <!-- Swiper -->
+        <div class="swiper popular-picks-items-con">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop2.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop3.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop4.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop5.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide popular-picks-item">
+                    <img src="./Images/pop2.jpeg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="popular-picks-below-image">
+            <div class="popular-picks-below-image-con">
+                <img src="./Images/kithcennn.jpg" alt="popular picks">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            mousewheel: {
+                sensitivity: 1,
+                releaseOnEdges: true
+            },
+            autoplay: {
+                delay: 2000,      
+                pauseOnMouseEnter: true, 
+            },
+            speed: 400,
+            slidesPerGroup: 1,
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 12
+                },
+
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                },
+
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 18
+                },
+
+                1180: {
+                    slidesPerView: 5,
+                    spaceBetween: 20
+                },
+
+                1440: {
+                    slidesPerView: 5,
+                    spaceBetween: 22
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
