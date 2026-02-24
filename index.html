@@ -2056,7 +2056,7 @@
             height: 50%;
             width: 100%;
             padding: 1rem;
-            background-color: #AB141B;
+            background-color: #255e5f;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -2341,13 +2341,13 @@
         .advatnages-top-head {
             font-size: 28px;
             font-weight: lighter;
-            color: rgb(0, 0, 0);
+            color: red;
             margin-bottom: 2rem;
             padding: 0 1rem;
         }
 
         .advatnages-top-head span {
-            color: red;
+            color: black;
         }
 
         .advantages-cards-main-con {
@@ -2365,9 +2365,11 @@
             align-items: center;
             text-align: center;
             height: 260px;
-            width: 205px;
+            width: 100%;
+            max-width: 205px;
             padding: 5px;
             background-color: #FDDDB8;
+            margin: 0 auto;
         }
 
         .advantages-card2 {
@@ -2377,9 +2379,11 @@
             align-items: center;
             text-align: center;
             height: 260px;
-            width: 205px;
+            width: 100%;
+            max-width: 205px;
             padding: 5px;
             background-color: #FDF5AD;
+            margin: 0 auto;
         }
 
         .advantages-card-img-con {
@@ -2408,27 +2412,26 @@
             color: rgba(0, 0, 0, 0.664);
         }
 
-        /* ===== RESPONSIVE ADDITIONS ===== */
+        .advantages-swiper {
+            display: none;
+            width: 100%;
+            height: 320px;
+            padding: 10px 0;
+        }
 
+        .advantages-swiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
 
+        /* ===== RESPONSIVE ===== */
         @media screen and (max-width: 1300px) {
             .advantages-cards-main-con {
                 grid-template-columns: repeat(3, minmax(200px, 1fr));
                 justify-items: center;
                 gap: 20px 10px;
-            }
-
-            .advantages-card,
-            .advantages-card2 {
-                width: 100%;
-                max-width: 290px;
-                height: auto;
-                min-height: 240px;
-                padding: 15px 10px;
-            }
-
-            .advantages-card-img-con {
-                margin-bottom: 1.2rem;
             }
         }
 
@@ -2437,49 +2440,28 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
+        }
 
-            .advantages-card,
-            .advantages-card2 {
-                width: 100%;
-                max-width: 280px;
-                height: auto;
-                min-height: 250px;
+        @media screen and (max-width: 767px) {
+            .advantages-cards-main-con {
+                display: none;
             }
-
-            .advantages-card-img-con {
-                margin-bottom: 1.5rem;
+            
+            .advantages-swiper {
+                display: block;
             }
         }
 
         @media screen and (max-width: 550px) {
-            .advantages-cards-main-con {
-                grid-template-columns: 1fr;
-                justify-items: center;
-                gap: 20px;
-            }
-
-            .advantages-card,
-            .advantages-card2 {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-                min-height: 240px;
-                padding: 20px 10px;
-            }
-
             .advatnages-top-head {
                 font-size: 24px;
                 text-align: center;
-                margin-top: 2rem;
-            }
-
-            .advantages-card-img-con {
-                margin-bottom: 1.8rem;
+                margin-top: 3rem !important; 
+                margin: auto;
             }
         }
 
         @media screen and (max-width: 350px) {
-
             .advantages-card,
             .advantages-card2 {
                 max-width: 260px;
@@ -2730,6 +2712,10 @@
             .main-banner-top-sub-heading-main {
                 margin-top: 0.5rem;
             }
+
+            .popular-pick-img-sub-text {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -2739,39 +2725,17 @@
     <div class="main-banner-main-con">
         <div class="main-banner-category-section">
             <div class="category-section-categories">
-                <button class="categories-btn">
-                    All
-                </button>
-
-                <button class="categories-btn">
-                    Bathware
-                </button>
-
-                <button class="categories-btn">
-                    Kitchen
-                </button>
-
-                <button class="categories-btn">
-                    Piping
-                </button>
-
-                <button class="categories-btn">
-                    Electricals
-                </button>
-
-                <button class="categories-btn">
-                    Fixtures
-                </button>
+                <button class="categories-btn">All</button>
+                <button class="categories-btn">Bathware</button>
+                <button class="categories-btn">Kitchen</button>
+                <button class="categories-btn">Piping</button>
+                <button class="categories-btn">Electricals</button>
+                <button class="categories-btn">Fixtures</button>
             </div>
 
             <div class="category-section-catalogue">
-                <button class="catalogue-btn">
-                    Download Catalogue
-                </button>
-
-                <button class="catalogue-btn">
-                    Store Locator
-                </button>
+                <button class="catalogue-btn">Download Catalogue</button>
+                <button class="catalogue-btn">Store Locator</button>
             </div>
         </div>
 
@@ -2779,12 +2743,9 @@
             <div class="main-banner-img-con" style="position: relative;">
                 <img src="IMAGESS/hero-background.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
 
-                <div
-                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 20; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); width: 90%;">
-                    <h1 class="main-banner-top-heading-main" style="margin: 0;"><span
-                            style="color: rgb(255, 208, 0);">YSR</span> - BUILD YOUR DREAMS</h1>
-                    <p class="main-banner-top-sub-heading-main">From brick to furniture, all in one place <br>for
-                        your home making...</p>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 20; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); width: 90%;">
+                    <h1 class="main-banner-top-heading-main" style="margin: 0;"><span style="color: rgb(255, 208, 0);">YSR</span> - BUILD YOUR DREAMS</h1>
+                    <p class="main-banner-top-sub-heading-main">From brick to furniture, all in one place <br>for your home making...</p>
                 </div>
             </div>
         </div>
@@ -2807,14 +2768,14 @@
     <div class="advertise-main-con">
         <div class="advertise-main-img-con">
             <div class="advertise-img-con">
-                <img src="IMAGESS/advertise.jpg" alt="advertise banner">
+                <img src="IMAGESS/YSR add banner.png" alt="advertise banner">
             </div>
         </div>
 
         <div class="advertise-main-content-con">
             <div class="advertise-card1">
                 <div class="advertise-card-img-con">
-                    <img src=" IMAGESS/photo_5_2026-02-17_15-44-27.jpg" alt="advertise image">
+                    <img src="IMAGESS/photo_5_2026-02-17_15-44-27.jpg" alt="advertise image">
                 </div>
 
                 <div class="advertise-card-content-con">
@@ -2836,12 +2797,11 @@
 
                 <div class="advertise-card-content-con">
                     <div class="advertise-card-content-text-con">
-                        <p class="advertise-card-heading" style="color: #AB141B !important;">Dining sales from</p>
-                        <p class="advertise-card-price" style="color: #AB141B !important;"><span>₹</span>16,999</p>
+                        <p class="advertise-card-heading" style="color: #255e5f !important;">Dining sales from</p>
+                        <p class="advertise-card-price" style="color: #255e5f !important;"><span>₹</span>16,999</p>
                     </div>
 
-                    <button class="advertise-card-content-btn"
-                        style="background-color: #AB141B !important; color: white;">
+                    <button class="advertise-card-content-btn" style="background-color: #255e5f !important; color: white;">
                         <i class="fa-solid fa-location-arrow"></i>
                     </button>
                 </div>
@@ -2856,11 +2816,11 @@
 
                 <div class="advertise-card-content-con">
                     <div class="advertise-card-content-text-con">
-                        <p class="advertise-card-heading" style="color: #AB141B !important;">Dining sales from</p>
-                        <p class="advertise-card-price" style="color: #AB141B !important;"><span>₹</span>16,999</p>
+                        <p class="advertise-card-heading" style="color: #255e5f !important;">Dining sales from</p>
+                        <p class="advertise-card-price" style="color: #255e5f !important;"><span>₹</span>16,999</p>
                     </div>
 
-                    <button class="advertise-card-content-btn" style="background-color: #AB141B !important;">
+                    <button class="advertise-card-content-btn" style="background-color: #255e5f !important;">
                         <i class="fa-solid fa-location-arrow" style="color: #ffffff !important;"></i>
                     </button>
                 </div>
@@ -2888,16 +2848,13 @@
 
     <!-- top brand part start -->
     <div class="top-brand-main-con">
-
         <div class="category-card">
             <div class="category-card-img-con">
                 <img src="IMAGESS/cat3.png" alt="#">
-
                 <div class="category-card-text-con">
                     <p class="category-card-main-head">Hawels</p>
                     <p class="category-card-sub-head">Fans And Bulb</p>
                 </div>
-
                 <button class="category-card-btn">Shop Now</button>
             </div>
         </div>
@@ -2905,12 +2862,10 @@
         <div class="category-card">
             <div class="category-card-img-con">
                 <img src="IMAGESS/cat2.png" alt="#">
-
                 <div class="category-card-text-con">
                     <p class="category-card-main-head">Aditya Birla</p>
                     <p class="category-card-sub-head">Cement And Construction</p>
                 </div>
-
                 <button class="category-card-btn">Shop Now</button>
             </div>
         </div>
@@ -2918,12 +2873,10 @@
         <div class="category-card">
             <div class="category-card-img-con">
                 <img src="IMAGESS/category.png" alt="#">
-
                 <div class="category-card-text-con">
                     <p class="category-card-main-head">Berger</p>
                     <p class="category-card-sub-head">Futuristic Colors</p>
                 </div>
-
                 <button class="category-card-btn">Shop Now</button>
             </div>
         </div>
@@ -2931,12 +2884,10 @@
         <div class="category-card">
             <div class="category-card-img-con">
                 <img src="IMAGESS/cat4.png" alt="#">
-
                 <div class="category-card-text-con">
                     <p class="category-card-main-head">Hawels</p>
                     <p class="category-card-sub-head">Strong Wires</p>
                 </div>
-
                 <button class="category-card-btn">Shop Now</button>
             </div>
         </div>
@@ -2944,12 +2895,10 @@
         <div class="category-card">
             <div class="category-card-img-con">
                 <img src="IMAGESS/cat5.png" alt="#">
-
                 <div class="category-card-text-con">
                     <p class="category-card-main-head">Tenax</p>
                     <p class="category-card-sub-head">Top Sealer</p>
                 </div>
-
                 <button class="category-card-btn">Shop Now</button>
             </div>
         </div>
@@ -2964,7 +2913,6 @@
             </div>
 
             <div class="categories-button-section">
-                <!-- <button class="categories-button" type="button">Paints</button> -->
                 <button class="categories-button" type="button">Plumbing</button>
                 <button class="categories-button" type="button">Cement</button>
                 <button class="categories-button" type="button">Bath</button>
@@ -2973,7 +2921,6 @@
         </div>
 
         <div class="categories-images-con">
-
             <div class="category-image-con paints show">
                 <a href=""><img src="IMAGESS/photo_19_2026-02-17_15-44-27.jpg"></a>
             </div>
@@ -2987,7 +2934,6 @@
                 <a href=""><img src="IMAGESS/photo_20_2026-02-17_15-44-27.jpg"></a>
             </div>
 
-            <!-- Plumbing -->
             <div class="category-image-con plumbing">
                 <a href=""><img src="IMAGESS/photo_13_2026-02-17_15-44-27.jpg"></a>
             </div>
@@ -3001,7 +2947,6 @@
                 <a href=""><img src="IMAGESS/photo_27_2026-02-17_15-44-27.jpg"></a>
             </div>
 
-            <!-- Cement -->
             <div class="category-image-con cement">
                 <a href=""><img src="IMAGESS/photo_35_2026-02-17_15-44-27.jpg"></a>
             </div>
@@ -3009,7 +2954,6 @@
                 <a href=""><img src="IMAGESS/photo_23_2026-02-17_15-44-27.jpg"></a>
             </div>
 
-            <!-- Bath -->
             <div class="category-image-con bath">
                 <a href=""><img src="IMAGESS/photo_17_2026-02-17_15-44-27.jpg"></a>
             </div>
@@ -3017,25 +2961,20 @@
                 <a href=""><img src="IMAGESS/photo_29_2026-02-17_15-44-27.jpg"></a>
             </div>
 
-            <!-- Paint -->
             <div class="category-image-con paint">
                 <a href=""><img src="IMAGESS/photo_22_2026-02-17_15-44-27.jpg"></a>
             </div>
             <div class="category-image-con paint">
                 <a href=""><img src="IMAGESS/photo_34_2026-02-17_15-44-27.jpg"></a>
             </div>
-
         </div>
     </div>
     <!-- category section end  -->
 
     <!-- mid banner section start  -->
-    <div class="mid-banner-main-con"
-        style="background: url(IMAGESS/endBannerYsr.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div class="mid-banner-main-con" style="background: url(IMAGESS/endBannerYsr.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;">
         <p class="mid-banner-upper-text">DESIGNER COLLECTION</p>
-
         <h2 class="mid-banner-main-text">EXPLORE MODERN STYLES FOR<br>EVERY ROOM IN YOUR HOME</h2>
-
         <button class="mid-banner-btn">CHECK IT NOW <span><i class="fa-solid fa-arrow-right"></i></span></button>
     </div>
     <!-- mid banner section end  -->
@@ -3046,16 +2985,15 @@
             <h1 class="advatnages-top-head"><span>HOW YOU GET</span> ADVANTAGES ?</h1>
         </div>
 
+        <!-- Desktop version -->
         <div class="advantages-cards-main-con">
             <div class="advantages-card">
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/open-box.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Products</p>
-                    <p class="advantages-card-sub-text">Choose the right product or services through well-organized
-                        catalogs.</p>
+                    <p class="advantages-card-sub-text">Choose the right product or services through well-organized catalogs.</p>
                 </div>
             </div>
 
@@ -3063,11 +3001,9 @@
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/medal.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Quality</p>
-                    <p class="advantages-card-sub-text">Quality assured from third party test certificates as well as
-                        from us.</p>
+                    <p class="advantages-card-sub-text">Quality assured from third party test certificates as well as from us.</p>
                 </div>
             </div>
 
@@ -3075,11 +3011,9 @@
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/weight-scale.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Quantity</p>
-                    <p class="advantages-card-sub-text">Evaluate the right quantity required through Material.biz
-                        calculator.</p>
+                    <p class="advantages-card-sub-text">Evaluate the right quantity required through Material.biz calculator.</p>
                 </div>
             </div>
 
@@ -3087,11 +3021,9 @@
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/sticky-note.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Quotation</p>
-                    <p class="advantages-card-sub-text">Choose the right quotation provided by our team and select by
-                        your budget.</p>
+                    <p class="advantages-card-sub-text">Choose the right quotation provided by our team and select by your budget.</p>
                 </div>
             </div>
 
@@ -3099,11 +3031,9 @@
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/wallet.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Price</p>
-                    <p class="advantages-card-sub-text">Finalize your Quotation, choose pricing according to various
-                        brands.</p>
+                    <p class="advantages-card-sub-text">Finalize your Quotation, choose pricing according to various brands.</p>
                 </div>
             </div>
 
@@ -3111,27 +3041,100 @@
                 <div class="advantages-card-img-con">
                     <img src="IMAGESS/shield.png" alt="open box">
                 </div>
-
                 <div class="advantages-card-content-con">
                     <p class="advantages-card-main-text">Get Right Security</p>
-                    <p class="advantages-card-sub-text">Your money is safe with us until you confirm your product’s
-                        shipment.</p>
+                    <p class="advantages-card-sub-text">Your money is safe with us until you confirm your product's shipment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Swiper version -->
+        <div class="swiper advantages-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="advantages-card">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/open-box.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Products</p>
+                            <p class="advantages-card-sub-text">Choose the right product or services through well-organized catalogs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="advantages-card2">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/medal.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Quality</p>
+                            <p class="advantages-card-sub-text">Quality assured from third party test certificates as well as from us.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="advantages-card">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/weight-scale.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Quantity</p>
+                            <p class="advantages-card-sub-text">Evaluate the right quantity required through Material.biz calculator.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="advantages-card2">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/sticky-note.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Quotation</p>
+                            <p class="advantages-card-sub-text">Choose the right quotation provided by our team and select by your budget.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="advantages-card">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/wallet.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Price</p>
+                            <p class="advantages-card-sub-text">Finalize your Quotation, choose pricing according to various brands.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="advantages-card2">
+                        <div class="advantages-card-img-con">
+                            <img src="IMAGESS/shield.png" alt="open box">
+                        </div>
+                        <div class="advantages-card-content-con">
+                            <p class="advantages-card-main-text">Get Right Security</p>
+                            <p class="advantages-card-sub-text">Your money is safe with us until you confirm your product's shipment.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Advantage part end  -->
 
     <!-- popular picks section start  -->
     <div class="popular-picks-main-con">
         <h2 class="popular-picks-main-heading">POPULAR PICKS</h2>
 
-        <!-- Swiper -->
         <div class="swiper popular-picks-items-con">
             <div class="swiper-wrapper">
-
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_1_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3140,7 +3143,6 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_2_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3149,7 +3151,6 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_3_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3158,7 +3159,6 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_4_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3167,7 +3167,6 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_5_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3176,7 +3175,6 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_6_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
@@ -3185,13 +3183,11 @@
 
                 <div class="swiper-slide popular-picks-item">
                     <a href=""><img src="IMAGESS/photo_7_2026-02-17_15-44-27.jpg" alt=""></a>
-
                     <div class="popular-picks-content-con">
                         <p class="popular-pick-img-text">Pipes</p>
                         <p class="popular-pick-img-sub-text">these are awesome pipes</p>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -3216,14 +3212,11 @@
 
                         <div class="second-testimonial-first-card-profile-content-con">
                             <p class="second-testimonial-first-card-profile-content-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi
-                                laboriosam
-                                nihil voluptates
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi laboriosam nihil voluptates
                             </p>
 
                             <div class="second-testimonial-first-card-profile-content-name">
                                 <p>- Michelle Rose</p>
-
                                 <div class="second-testimonial-first-card-profile-content-icons">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -3244,14 +3237,11 @@
 
                         <div class="second-testimonial-first-card-profile-content-con">
                             <p class="second-testimonial-first-card-profile-content-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi
-                                laboriosam
-                                nihil
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi laboriosam nihil
                             </p>
 
                             <div class="second-testimonial-first-card-profile-content-name">
                                 <p>- Michelle Rose</p>
-
                                 <div class="second-testimonial-first-card-profile-content-icons">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -3274,14 +3264,11 @@
 
                         <div class="second-testimonial-first-card-profile-content-con">
                             <p class="second-testimonial-first-card-profile-content-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi
-                                laboriosam
-                                nihil
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi laboriosam nihil
                             </p>
 
                             <div class="second-testimonial-first-card-profile-content-name">
                                 <p>- Michelle Rose</p>
-
                                 <div class="second-testimonial-first-card-profile-content-icons">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -3302,13 +3289,11 @@
 
                         <div class="second-testimonial-first-card-profile-content-con">
                             <p class="second-testimonial-first-card-profile-content-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi
-                                laboriosam
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae est excepturi laboriosam
                             </p>
 
                             <div class="second-testimonial-first-card-profile-content-name">
                                 <p>- Michelle Rose</p>
-
                                 <div class="second-testimonial-first-card-profile-content-icons">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -3332,33 +3317,24 @@
     </div>
     <!-- popular picks section end  -->
 
-
-
     <!-- footer section start  -->
     <div class="footer-main-con" id="footer-section">
         <div class="footer-about-compony-con">
             <div class="footer-about-compony-content">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui error tenetur minima laboriosam itaque
-                    dolorum provident quis doloribus, omnis vitae, blanditiis ullam voluptates quibusdam rem eveniet
-                    officiis! Assumenda odio,</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui error tenetur minima laboriosam itaque dolorum provident quis doloribus, omnis vitae, blanditiis ullam voluptates quibusdam rem eveniet officiis! Assumenda odio,</p>
             </div>
 
             <div class="footer-about-compony-icons">
                 <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
-
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
-
                 <a href=""><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
 
         <div class="footer-compony-list-con">
             <ul>
-                <li>
-                    <h2>COMPANY</h2>
-                </li>
+                <li><h2>COMPANY</h2></li>
                 <li><a href="#">About</a></li>
                 <li><a href="">Feature</a></li>
                 <li><a href="">Works</a></li>
@@ -3368,9 +3344,7 @@
 
         <div class="footer-help-list-con">
             <ul>
-                <li>
-                    <h2>HELP</h2>
-                </li>
+                <li><h2>HELP</h2></li>
                 <li><a href="">Customer Support</a></li>
                 <li><a href="">Delivery Details</a></li>
                 <li><a href="">Terms & Conditions</a></li>
@@ -3380,9 +3354,7 @@
 
         <div class="footer-faq-list-con">
             <ul>
-                <li>
-                    <h2>FAQ</h2>
-                </li>
+                <li><h2>FAQ</h2></li>
                 <li><a href="">Account</a></li>
                 <li><a href="">Manage Deliveries</a></li>
                 <li><a href="">Orders</a></li>
@@ -3399,118 +3371,133 @@
         </div>
 
         <div class="get-help-con">
-            <a href="">
-                Get Experts Help<i class="fa-solid fa-question"></i>
-            </a>
+            <a href="">Get Experts Help<i class="fa-solid fa-question"></i></a>
         </div>
     </div>
 
-</body>
+    <!-- category section js  -->
+    <script>
+        document.querySelectorAll(".categories-button").forEach(button => {
+            button.addEventListener("click", function () {
+                const category = this.textContent.trim().toLowerCase();
+                document.querySelectorAll(".category-image-con").forEach(img => {
+                    img.classList.remove("show");
+                });
+                setTimeout(() => {
+                    document.querySelectorAll("." + category).forEach(img => {
+                        img.classList.add("show");
+                    });
+                }, 50);
+            });
+        });
+    </script>
 
-<!-- category section js  -->
+    <!-- swiper js for popular picks section -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-<script>
-    document.querySelectorAll(".categories-button").forEach(button => {
-        button.addEventListener("click", function () {
+    <script>
+        const popularSwiper = new Swiper('.popular-picks-items-con', {
+            direction: 'horizontal',
+            loop: true,
+            mousewheel: {
+                sensitivity: 1,
+                releaseOnEdges: true
+            },
+            autoplay: {
+                delay: 2000,
+                pauseOnMouseEnter: true,
+            },
+            speed: 400,
+            slidesPerGroup: 1,
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 12
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 18
+                },
+                1180: {
+                    slidesPerView: 5,
+                    spaceBetween: 20
+                },
+                1440: {
+                    slidesPerView: 5,
+                    spaceBetween: 22
+                }
+            }
+        });
 
-            const category = this.textContent.trim().toLowerCase();
+        // Advantages swiper for mobile
+        const advantagesSwiper = new Swiper('.advantages-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                pauseOnMouseEnter: true,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            breakpoints: {
+                480: {
+                    slidesPerView: 5,
+                    spaceBetween: 15,
+                    centeredSlides: true,
+                },
+                640: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                }
+            }
+        });
 
-            document.querySelectorAll(".category-image-con").forEach(img => {
-                img.classList.remove("show");
+        // contact icon removing js
+        document.addEventListener('DOMContentLoaded', function () {
+            const floatButtons = document.getElementById('float-buttons');
+            const footer = document.getElementById('footer-section');
+
+            function checkFooterVisibility() {
+                if (!footer || !floatButtons) return;
+
+                const footerRect = footer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                if (footerRect.top <= windowHeight * 0.9) {
+                    floatButtons.style.opacity = '0';
+                    floatButtons.style.pointerEvents = 'none';
+                    floatButtons.style.transform = 'translateY(20px)';
+                    floatButtons.style.transition = 'all 0.3s ease';
+                } else {
+                    floatButtons.style.opacity = '1';
+                    floatButtons.style.pointerEvents = 'auto';
+                    floatButtons.style.transform = 'translateY(0)';
+                    floatButtons.style.transition = 'all 0.3s ease';
+                }
+            }
+
+            checkFooterVisibility();
+            let scrollTimeout;
+            window.addEventListener('scroll', function () {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(checkFooterVisibility, 50);
             });
 
-            setTimeout(() => {
-                document.querySelectorAll("." + category).forEach(img => {
-                    img.classList.add("show");
-                });
-            }, 50);
+            window.addEventListener('resize', checkFooterVisibility);
         });
-    });
-</script>
-
-<!-- swiper js for popular picks section -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
-        loop: true,
-        mousewheel: {
-            sensitivity: 1,
-            releaseOnEdges: true
-        },
-        autoplay: {
-            delay: 2000,
-            pauseOnMouseEnter: true,
-        },
-        speed: 400,
-        slidesPerGroup: 1,
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 10
-            },
-
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 12
-            },
-
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 15
-            },
-
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 18
-            },
-
-            1180: {
-                slidesPerView: 5,
-                spaceBetween: 20
-            },
-
-            1440: {
-                slidesPerView: 5,
-                spaceBetween: 22
-            }
-        }
-    });
-
-    // contact icon removing js
-    document.addEventListener('DOMContentLoaded', function () {
-        const floatButtons = document.getElementById('float-buttons');
-        const footer = document.getElementById('footer-section');
-
-        function checkFooterVisibility() {
-            if (!footer || !floatButtons) return;
-
-            const footerRect = footer.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            if (footerRect.top <= windowHeight * 0.9) {
-                floatButtons.style.opacity = '0';
-                floatButtons.style.pointerEvents = 'none';
-                floatButtons.style.transform = 'translateY(20px)';
-                floatButtons.style.transition = 'all 0.3s ease';
-            } else {
-                floatButtons.style.opacity = '1';
-                floatButtons.style.pointerEvents = 'auto';
-                floatButtons.style.transform = 'translateY(0)';
-                floatButtons.style.transition = 'all 0.3s ease';
-            }
-        }
-
-        checkFooterVisibility();
-        let scrollTimeout;
-        window.addEventListener('scroll', function () {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(checkFooterVisibility, 50);
-        });
-
-        window.addEventListener('resize', checkFooterVisibility);
-    });
-</script>
+    </script>
+</body>
 
 </html>
